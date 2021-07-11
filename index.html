@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="icon.png">
+        <title>The Web Console</title>
+    </head>
+    <body>
+        <h1>Visual studio code</h1>
+        <hr>
+        <p>Visual Studio Code is a source-code editor that can be used with a variety of programming languages, including Java, JavaScript, Go, Node.js, Python and C++. It is based on the Electron framework, which is used to develop Node.js Web applications that run on the Blink layout engine. Visual Studio Code employs the same editor component (codenamed "Monaco") used in Azure DevOps (formerly called Visual Studio Online and Visual Studio Team Services).
+
+            Instead of a project system, it allows users to open one or more directories, which can then be saved in workspaces for future reuse. This allows it to operate as a language-agnostic code editor for any language. It supports a number of programming languages and a set of features that differs per language. Unwanted files and folders can be excluded from the project tree via the settings. Many Visual Studio Code features are not exposed through menus or the user interface but can be accessed via the command palette.
+            
+            Visual Studio Code can be extended via extensions, available through a central repository. This includes additions to the editor and language support. A notable feature is the ability to create extensions that add support for new languages, themes, and debuggers, perform static code analysis, and add code linters using the Language Server Protocol.
+            
+            Visual Studio Code includes multiple extensions for FTP, allowing the software to be used as a free alternative for web development. Code can be synced between the editor and the server, without downloading any extra software.
+            
+            Visual Studio Code allows users to set the code page in which the active document is saved, the newline character, and the programming language of the active document. This allows it to be used on any platform, in any locale, and for any given programming language.</p>
+            <br><br>
+            <ol>
+                Steps to install visual studio code:
+                <li><a href="https://code.visualstudio.com/download" target="_blank">Click here</a> to download visual studio code</li>
+                <li>Run the exe file and agree to all requests</li>
+                <li>Then, Install the file. Done, you have installed visual studio code</li>
+            </ol>
+            <br><br>
+            <h1>Console</h1>
+            <hr>
+            <br><br>
+            <p>A Web console is a tool which is mainly used to log information associated with a web page like: network requests, javascript, security errors, warnings, CSS etc. It enables us to interact with a web page by executing javascript expression in the contents of the page.</p>
+            <br>
+            Press F12 to open the web console.
+            <br><br>
+        <h1>Open Console</h1>
+        <hr>
+        <button id="my_name">Display my name and it's length</button>
+        <button id="sec_name">Display Second Name</button>
+        <button id="caps">Show all name in caps</button>
+        <button id="low">Show all names without caps</button>
+        <div>
+            <h1>Maths (Please fill all fields)</h1>
+            <div><input id="addnum1" type="number"> + <input id="addnum2" type="number"></div>
+            <div><input id="subnum1" type="number"> - <input id="subnum2" type="number"></div>
+            <div><input id="pronum1" type="number"> * <input id="pronum2" type="number"></div>
+            <div><input id="divnum1" type="number"> / <input id="divnum2" type="number"></div>
+            <div><input id="powernum" type="number"> ^ <input id="powerexpo" type="number"></div>
+            <div>squareroot <input id="root" type="number"></div>
+            <div>Enter a math problem(ex. 1+1*2/1) <input id="evaluate"></div>
+            <button id="solve">Solve Problems</button>
+        </div>
+        <style>
+            button {
+                cursor: pointer;
+                padding: 5px;
+                background-color: black;
+                color: white;
+                border-radius: 10px;
+            }
+            div {
+                margin: 10px;
+            }
+
+            h1 {
+                color: green;
+                font-family: sans-serif;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <script>
+            var first_name = "Anjor";
+            var last_name = " Srivastava";
+            var full_name = first_name.concat(last_name);
+            var lengthOfName = full_name.length;
+
+            var test_name = "Alex Peter Jhon";
+            var new_name = test_name.replace("Peter", "Roy");
+
+            var caps1 = full_name.toUpperCase();
+            var caps2 = new_name.toUpperCase();
+
+            var low1 = full_name.toLowerCase();
+            var low2 = new_name.toLowerCase();
+
+            var sum, differnce, product, quotient, squareroot, power, evaluate;
+
+            document.getElementById("my_name").addEventListener('click', function () {
+                console.log("My Name:");
+                console.log("My first name is ".concat(first_name));
+                console.log("My last name is ".concat(last_name));
+                console.log("My full name is ".concat(full_name));
+                console.log("The length of my name is ".concat(lengthOfName));
+            });
+
+            document.getElementById("sec_name").addEventListener('click', function () {
+                console.log("Second Name:");
+                console.log("Name: ".concat(test_name));
+                console.log("Name after Peter has been replaced by Roy: ".concat(new_name));
+            });
+
+            document.getElementById("caps").addEventListener('click', function () {
+                console.log("All names in caps:");
+                console.log(caps1);
+                console.log(caps2);
+            });
+
+            document.getElementById("low").addEventListener('click', function () {
+                console.log("All names without caps:");
+                console.log(low1);
+                console.log(low2);
+            });
+
+            document.getElementById("solve").addEventListener('click', function () {
+                sum = Number(document.getElementById("addnum1").value) + Number(document.getElementById("addnum2").value);
+                differnce = document.getElementById("subnum1").value - document.getElementById("subnum2").value;
+                product = document.getElementById("pronum1").value * document.getElementById("pronum2").value;
+                quotient = document.getElementById("divnum1").value / document.getElementById("divnum2").value;
+                power = Math.pow(document.getElementById("powernum").value, document.getElementById("powerexpo").value);
+                squareroot = Math.sqrt(document.getElementById("root").value);
+                evaluate = eval(document.getElementById("evaluate").value);
+                console.log("Math Problem answers:")
+                console.log(sum);
+                console.log(differnce);
+                console.log(product);
+                console.log(quotient);
+                console.log(power);
+                console.log(squareroot);
+                console.log(evaluate);
+            });
+        </script>
+    </body>
+</html>
